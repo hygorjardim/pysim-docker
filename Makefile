@@ -5,10 +5,10 @@ all: build run exec
 start: run exec
 
 build:
-	docker build -t sysmocom:v5.0 . 
+	docker build -t pysim:v5.0 . 
 run:
-	docker run -d --privileged --device=/dev/ttyUSB0 --name=sysmocom sysmocom:v5.0 
+	docker run -d --privileged --device=/dev/ttyUSB0 --name=pysim pysim:v5.0 
 exec:
-	docker exec -it sysmocom /bin/bash
+	docker exec -it pysim /bin/bash
 stop:
-	docker stop sysmocom && docker rm sysmocom
+	docker stop pysim && docker rm pysim

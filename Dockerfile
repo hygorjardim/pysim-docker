@@ -35,4 +35,6 @@ RUN git clone -b master git://git.osmocom.org/pysim && \
     git reset --hard $COMMIT && \
     ln -s /root/pysim/pySim-prog.py /bin/writesim
 
+WORKDIR /root/pysim
+
 ENTRYPOINT [ "pcscd", "-f"]
